@@ -1,0 +1,42 @@
+/* Empty. Add your own CSS if you like */
+
+/* maybe I will...maybe I will */
+
+div {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.bestiary-gallery {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.bestiary-gallery a {
+    width: 160px;
+    height: 160px;
+    margin: 8px;
+    padding: 8px;
+}
+
+.elem-span {
+    border-radius: 4px;
+    border: 1px solid #001;
+    font-size: 11px;
+    padding: 2px 4px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px #222;
+}
+
+.elem-0 { background-color: #2a2; } /* Drain */
+.elem-1 { background-color: #415; } /* Dark */
+.elem-2 { background-color: #fe1; } /* Bolt */
+.elem-3 { background-color: #3ef; } /* Ice */
+.elem-4 { background-color: #e11; } /* Fire */
+.elem-5 { background-color: #58e; } /* Air */
+.elem-6 { background-color: #861; } /* Earth */
+.elem-7 { background-color: #dcf; } /* Holy */
+.elem-no { background-color: #778; } 

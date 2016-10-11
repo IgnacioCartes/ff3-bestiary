@@ -1,0 +1,60 @@
+<ion-view view-title="{{beast.name}}">
+    <ion-content>
+        <ion-list>
+            <ion-item>
+                <h2>#{{beast.id+1}} - {{beast.name}}</h2>
+            </ion-item>
+            <ion-item class="item-body">
+                <img src="/assets/no_image.png" />
+                <div class="card">
+
+                    <ul class="list list-inset">
+                        <li class="item row"><div class="col col-75">Level/Skill Level</div><div class="col">{{beast.level}}/{{beast.skill}}</div></li>
+                        <li class="item row"><div class="col col-75">HP</div><div class="col">{{beast.hp}}</div></li>
+                    </ul>
+                        
+                    <ul class="list list-inset">
+                        <li class="item row"><div class="col col-75">Attack {{beast.attack_mult}}x</div><div class="col">{{beast.attack}}</div></li>
+                        <li class="item row"><div class="col col-75">Hit%</div><div class="col">{{beast.hit}}%</div></li>
+                        <li class="item row"><div class="col col-75">Intellect</div><div class="col">{{beast.intellect}}</div></li>
+                        <li class="item row"><div class="col col-75">Spirit</div><div class="col">{{beast.spirit}}</div></li>
+                        <li class="item row"><div class="col col-75">Defense {{beast.evade_mult}}x</div><div class="col">{{beast.defense}}</div></li>
+                        <li class="item row"><div class="col col-75">Evade%</div><div class="col">{{beast.evade}}%</div></li>
+                        <li class="item row"><div class="col col-75">M.Defense {{beast.m_evade_mult}}x</div><div class="col">{{beast.m_defense}}</div></li>
+                        <li class="item row"><div class="col col-75">M.Evade%</div><div class="col">{{beast.m_evade}}%</div></li>
+                        <li class="item row" ng-show="beast.stat_on_hit"><div class="col col-75">On Hit</div><div class="col">{{beast.stat_on_hit}}</div></li>
+                    </ul>
+                        
+                    <ul class="list list-inset">
+                        <li class="item row"><div class="col col-75">Attack element</div><div class="col">
+                            <div ng-repeat="element in beast.atk_elem_array">
+                                <span class="elem-span elem-{{element}}">{{elements.names[element]}}</span><br/>
+                            </div>
+                        </div></li>
+                        <li class="item row"><div class="col col-75">Resistances</div><div class="col">
+                            <div ng-repeat="element in beast.elem_resist_array">
+                                <span class="elem-span elem-{{element}}">{{elements.names[element]}}</span><br/>
+                            </div>
+                        </div></li>
+                        <li class="item row"><div class="col col-75">Weaknesses</div><div class="col">
+                            <div ng-repeat="element in beast.elem_weak_array">
+                                <span class="elem-span elem-{{element}}">{{elements.names[element]}}</span><br/>
+                            </div>
+                        </div></li>
+                    </ul>
+                    
+                    
+                    <ul class="list list-inset">
+                        <li class="item row"><div class="col col-75">Drop Rate</div><div class="col">{{beast.drop_rate}}%</div></li>
+                    </ul>
+                    <ul class="list list-inset">
+                        <li class="item row"><div class="col col-75">Sp.Attack Rate</div><div class="col">{{beast.sp_rate}}%</div></li>
+                        <li class="item row"><div class="col col-75">Gold</div><div class="col">{{beast.gold}}</div></li>
+                        <li class="item row"><div class="col col-75">EXP</div><div class="col">{{beast.exp}}</div></li>
+                    </ul>
+                    
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

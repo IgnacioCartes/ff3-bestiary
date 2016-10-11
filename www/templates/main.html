@@ -1,0 +1,8 @@
+<ion-view view-title="Bestiary">
+    <ion-content class="bestiary-gallery">
+        <a class="button button-small button-stable" ng-repeat="beast in bestiary" href="#/app/beast/{{beast.id}}">
+            <img src="/assets/no_image.png" />
+            <p>#{{beast.id+1}} - {{beast.name}}</p>
+        </a>
+    </ion-content>
+</ion-view>
