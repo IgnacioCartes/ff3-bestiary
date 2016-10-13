@@ -2,11 +2,14 @@ angular.module('ff3-bestiary.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, dataService) {
     
+    /*
     dataService.load('/js/data/bestiary.json').then(function(response) {
         $scope.bestiary = response.data;
     });
+    */
     
-    // Additional data
+    $scope.bestiary = FF3_BESTIARY_DATA;
+    
     $scope.elements = {
         names: ["Drain", "Dark", "Bolt", "Ice", "Fire", "Air", "Earth", "Holy"],
     };
@@ -22,6 +25,13 @@ angular.module('ff3-bestiary.controllers', [])
         return arr;
     };
     
+    $scope.findInArrayById = function(arr, id) {
+        for (var i=0; i<arr.length; i++) {
+            if (arr[i].id === parseInt(id)) return arr[i];
+        };
+        return null;
+    };
+    
 })
 
 .controller('MainCtrl', function($scope) {
@@ -29,7 +39,8 @@ angular.module('ff3-bestiary.controllers', [])
 })
 
 .controller('BeastCtrl', function($scope, $stateParams) {
-    $scope.beast = $scope.bestiary.find(function(d) {return d.id == $stateParams.beastId;});
+    $scope.beast = $scope.findInArrayById($scope.bestiary, $stateParams.beastId);
+        //$scope.bestiary.find(function(d) {return d.id == $stateParams.beastId;});
 
     $scope.beast.elem_array = $scope.byteToArray($scope.beast.atk_elem);
     $scope.beast.elem_resist_array = $scope.byteToArray($scope.beast.elem_resist);

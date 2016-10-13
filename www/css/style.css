@@ -15,10 +15,10 @@ div {
 }
 
 .bestiary-gallery a {
-    width: 160px;
+    width: 150px;
     height: 160px;
-    margin: 8px;
-    padding: 8px;
+    margin: 8px 4px;
+    padding: 8px 2px;
 }
 
 .elem-span {
