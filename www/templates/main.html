@@ -1,6 +1,10 @@
 <ion-view view-title="Bestiary">
     <ion-content class="bestiary-gallery">
-        <a class="button button-small button-stable" ng-repeat="beast in bestiary" href="#/app/beast/{{beast.id}}">
+        <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Search..." ng-model="query" />
+        </label>
+        <a class="button button-small button-stable" ng-repeat="beast in bestiary | filter:query" href="#/app/beast/{{beast.id}}">
             <img src="/assets/no_image.png" />
             <p>#{{beast.id+1}} - {{beast.name}}</p>
         </a>

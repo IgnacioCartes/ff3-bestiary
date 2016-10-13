@@ -9,34 +9,34 @@
                 <div class="card">
 
                     <ul class="list list-inset">
-                        <li class="item row"><div class="col col-75">Level/Skill Level</div><div class="col">{{beast.level}}/{{beast.skill}}</div></li>
-                        <li class="item row"><div class="col col-75">HP</div><div class="col">{{beast.hp}}</div></li>
+                        <li class="item row"><div class="col col-67">Level/Skill Level</div><div class="col">{{beast.level}}/{{beast.skill}}</div></li>
+                        <li class="item row"><div class="col col-67">HP</div><div class="col">{{beast.hp}}</div></li>
                     </ul>
                         
                     <ul class="list list-inset">
-                        <li class="item row"><div class="col col-75">Attack {{beast.attack_mult}}x</div><div class="col">{{beast.attack}}</div></li>
-                        <li class="item row"><div class="col col-75">Hit%</div><div class="col">{{beast.hit}}%</div></li>
-                        <li class="item row"><div class="col col-75">Intellect</div><div class="col">{{beast.intellect}}</div></li>
-                        <li class="item row"><div class="col col-75">Spirit</div><div class="col">{{beast.spirit}}</div></li>
-                        <li class="item row"><div class="col col-75">Defense {{beast.evade_mult}}x</div><div class="col">{{beast.defense}}</div></li>
-                        <li class="item row"><div class="col col-75">Evade%</div><div class="col">{{beast.evade}}%</div></li>
-                        <li class="item row"><div class="col col-75">M.Defense {{beast.m_evade_mult}}x</div><div class="col">{{beast.m_defense}}</div></li>
-                        <li class="item row"><div class="col col-75">M.Evade%</div><div class="col">{{beast.m_evade}}%</div></li>
-                        <li class="item row" ng-show="beast.stat_on_hit"><div class="col col-75">On Hit</div><div class="col">{{beast.stat_on_hit}}</div></li>
+                        <li class="item row"><div class="col col-67">Attack {{beast.attack_mult}}x</div><div class="col">{{beast.attack}}</div></li>
+                        <li class="item row"><div class="col col-67">Hit%</div><div class="col">{{beast.hit}}%</div></li>
+                        <li class="item row"><div class="col col-67">Intellect</div><div class="col">{{beast.intellect}}</div></li>
+                        <li class="item row"><div class="col col-67">Spirit</div><div class="col">{{beast.spirit}}</div></li>
+                        <li class="item row"><div class="col col-67">Defense {{beast.evade_mult}}x</div><div class="col">{{beast.defense}}</div></li>
+                        <li class="item row"><div class="col col-67">Evade%</div><div class="col">{{beast.evade}}%</div></li>
+                        <li class="item row"><div class="col col-67">M.Defense {{beast.m_evade_mult}}x</div><div class="col">{{beast.m_defense}}</div></li>
+                        <li class="item row"><div class="col col-67">M.Evade%</div><div class="col">{{beast.m_evade}}%</div></li>
+                        <li class="item row" ng-show="beast.stat_on_hit"><div class="col col-67">On Hit</div><div class="col">{{beast.stat_on_hit}}</div></li>
                     </ul>
                         
                     <ul class="list list-inset">
-                        <li class="item row"><div class="col col-75">Attack element</div><div class="col">
+                        <li class="item row"><div class="col col-67">Attack element</div><div class="col">
                             <div ng-repeat="element in beast.atk_elem_array">
                                 <span class="elem-span elem-{{element}}">{{elements.names[element]}}</span><br/>
                             </div>
                         </div></li>
-                        <li class="item row"><div class="col col-75">Resistances</div><div class="col">
+                        <li class="item row"><div class="col col-67">Resistances</div><div class="col">
                             <div ng-repeat="element in beast.elem_resist_array">
                                 <span class="elem-span elem-{{element}}">{{elements.names[element]}}</span><br/>
                             </div>
                         </div></li>
-                        <li class="item row"><div class="col col-75">Weaknesses</div><div class="col">
+                        <li class="item row"><div class="col col-67">Weaknesses</div><div class="col">
                             <div ng-repeat="element in beast.elem_weak_array">
                                 <span class="elem-span elem-{{element}}">{{elements.names[element]}}</span><br/>
                             </div>
@@ -45,12 +45,31 @@
                     
                     
                     <ul class="list list-inset">
-                        <li class="item row"><div class="col col-75">Drop Rate</div><div class="col">{{beast.drop_rate}}%</div></li>
+                        <li class="item row"><div class="col col-67">Drop Rate</div><div class="col">{{beast.drop_rate}}%</div></li>
+                        <li class="item row" ng-show="beast.drop_rate > 0"><div class="col col-67">Drops</div><div class="col">
+                            <div ng-repeat="item in beast.drop_data">
+                                <span class="elem-span elem-no">{{itemnames[item]}}</span><br/>
+                            </div>
+                        </div></li>
+                        <li class="item row"><div class="col col-67">Steal</div><div class="col">
+                            <div ng-repeat="item in beast.steal_data">
+                                <span class="elem-span elem-no">{{itemnames[item]}}</span><br/>
+                            </div>
+                        </div></li>
                     </ul>
+                    
                     <ul class="list list-inset">
-                        <li class="item row"><div class="col col-75">Sp.Attack Rate</div><div class="col">{{beast.sp_rate}}%</div></li>
-                        <li class="item row"><div class="col col-75">Gold</div><div class="col">{{beast.gold}}</div></li>
-                        <li class="item row"><div class="col col-75">EXP</div><div class="col">{{beast.exp}}</div></li>
+                        <li class="item row"><div class="col col-67">Sp.Attack Rate</div><div class="col">{{beast.sp_rate}}%</div></li>
+                        <li class="item row" ng-show="beast.sp_rate > 0"><div class="col col-67">Special Attacks</div><div class="col">
+                            <div ng-repeat="special in beast.sp">
+                                <span class="elem-span elem-no">{{special}}</span><br/>
+                            </div>
+                        </div></li>
+                    </ul>
+                        
+                    <ul class="list list-inset">
+                        <li class="item row"><div class="col col-67">Gold</div><div class="col">{{beast.gold}}</div></li>
+                        <li class="item row"><div class="col col-67">EXP</div><div class="col">{{beast.exp}}</div></li>
                     </ul>
                     
                 </div>
