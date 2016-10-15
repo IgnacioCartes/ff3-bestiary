@@ -47,12 +47,12 @@
                     <ul class="list list-inset">
                         <li class="item row"><div class="col col-67">Drop Rate</div><div class="col">{{beast.drop_rate}}%</div></li>
                         <li class="item row" ng-show="beast.drop_rate > 0"><div class="col col-67">Drops</div><div class="col">
-                            <div ng-repeat="item in beast.drop_data">
+                            <div ng-repeat="item in beast.drop_data track by $index">
                                 <span class="elem-span elem-no">{{itemnames[item]}}</span><br/>
                             </div>
                         </div></li>
                         <li class="item row"><div class="col col-67">Steal</div><div class="col">
-                            <div ng-repeat="item in beast.steal_data">
+                            <div ng-repeat="item in beast.steal_data track by $index">
                                 <span class="elem-span elem-no">{{itemnames[item]}}</span><br/>
                             </div>
                         </div></li>
@@ -61,8 +61,8 @@
                     <ul class="list list-inset">
                         <li class="item row"><div class="col col-67">Sp.Attack Rate</div><div class="col">{{beast.sp_rate}}%</div></li>
                         <li class="item row" ng-show="beast.sp_rate > 0"><div class="col col-67">Special Attacks</div><div class="col">
-                            <div ng-repeat="special in beast.sp">
-                                <span class="elem-span elem-no">{{special}}</span><br/>
+                            <div ng-repeat="special in beast.sp track by $index">
+                                <span class="elem-span elem-no">{{specials[special]}}</span><br/>
                             </div>
                         </div></li>
                     </ul>

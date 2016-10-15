@@ -1,4 +1,4 @@
 FF3 Bestiary
 =====================
 
-A Bestiary for Famicom FF3, created using Ionic.
+A Bestiary for Famicom Final Fantasy III, created using Ionic.
